@@ -6,29 +6,36 @@ Usage
 Installation
 ------------
 
-To use Lumache, first install it using pip:
+To use cvehunter, first install it using pip:
 
 .. code-block:: console
 
-   (.venv) $ pip install lumache
+   pip3 install cvehunter
 
-Creating recipes
+Basic example
 ----------------
 
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
+.. code-block:: python
 
-.. autofunction:: lumache.get_random_ingredients
+   import asyncio
+   from cvehunter import CveHunter
+   
+   async def test() -> None:
+       ch = CveHunter()
+       
+       cve = await ch.search_by_cve("CVE-2023-41991")
+       
+       print(cve.cve_id)
+       "CVE-2023-41991"
 
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
+       print(cve.cwe_id)
+       "CWE-295"
 
-.. autoexception:: lumache.InvalidKindError
+       print(cve.description)
+       "A certificate validation issue was addressed. This issue is fixed in macOS Ventura 13.6, iOS 16.7 and iPadOS 16.7. A malicious app may be able to bypass signature validation. Apple is aware of a report that this issue"
 
-For example:
-
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
+       print(cve.cvss_v3)
+       {'score': 5.5, 'vector': 'CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N', 'severity': 'MEDIUM', 'version': 3.1, 'exploitability': 1.8, 'impact': 3.6}
+       
+   asyncio.run(test())
 
