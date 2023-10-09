@@ -1,9 +1,6 @@
-Template for the Read the Docs tutorial
+Repository for cvehunter documentation
 =======================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+Read the documentation here:
 
-Read the tutorial here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
+https://cvehunter-docs.readthedocs.io/en/latest/
