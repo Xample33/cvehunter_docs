@@ -1,13 +1,9 @@
-Welcome to Lumache's documentation!
+Welcome to cvehunter documentation!
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+**CVEHunter** is a Python asynchronous library designed to simplify the retrieval of CVE (Common Vulnerabilities and Exposures) and CPE (Common Platform Enumeration) information using the `NVD API <https://nvd.nist.gov/developers/vulnerabilities>`_. It streamlines the process of searching for and accessing valuable security data for vulnerability assessment and management.
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+Check out the :doc:`usage` section for further information
 
 .. note::
 
@@ -19,4 +15,3 @@ Contents
 .. toctree::
 
    usage
-   api
