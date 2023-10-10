@@ -64,7 +64,7 @@ You can use the `search_by_cve` method to retrieve information about a specific 
    hunter = CveHunter()
 
    # Search for information about a CVE by its CVE ID
-   cve_id = "CVE-2023-12345"
+   cve_id = "CVE-2023-41991"
    cve_info = await hunter.search_by_cve(cve_id)
 
    if cve_info:
@@ -94,10 +94,10 @@ You can use the `search_by_cpe` method to search for CVEs based on a CPE (Common
            print(cve_id)
 
    # Optional Parameters:
-   # - limit (int): Maximum number of results to return. Default is None (no limit).
-   # - only_vulnerable (bool): Limit results to only include the vulnerable ones. Default is None.
-   # - start_date (str): Start date for filtering CVEs based on publication date. Default is None.
-   # - end_date (str): End date for filtering CVEs based on publication date. Default is None.
+   # - limit (int, optional): Maximum number of results to return. Default is None (no limit).
+   # - only_vulnerable (bool, optional): Limit results to only include the vulnerable ones. Default is None.
+   # - start_date (str, optional): Start date for filtering CVEs based on publication date. Default is None.
+   # - end_date (str, optional): End date for filtering CVEs based on publication date. Default is None.
 
 Searching by CVSS Vector
 ------------------------
@@ -124,9 +124,9 @@ You can use the `search_by_vector` method to search for CVEs based on a CVSS (Co
    # Parameters:
    # - cvss_version (int): The CVSS version (2 or 3) to use for the search.
    # - vector (str): The CVSS vector representing the vulnerabilities.
-   # - limit (int): Maximum number of results to return. Default is None (no limit).
-   # - start_date (str): Start date for filtering CVEs based on publication date. Default is None.
-   # - end_date (str): End date for filtering CVEs based on publication date. Default is None.
+   # - limit (int, optional): Maximum number of results to return. Default is None (no limit).
+   # - start_date (str, optional): Start date for filtering CVEs based on publication date. Default is None.
+   # - end_date (str, optional): End date for filtering CVEs based on publication date. Default is None.
 
 Searching by CWE ID
 -------------------
@@ -151,6 +151,6 @@ You can use the `search_by_cwe` method to search for CVEs based on a CWE (Common
 
    # Parameters:
    # - cwe_id (str): The CWE ID to search for CVEs.
-   # - limit (int): Maximum number of results to return. Default is None (no limit).
-   # - start_date (str): Start date for filtering CVEs based on publication date. Default is None.
-   # - end_date (str): End date for filtering CVEs based on publication date. Default is None.
+   # - limit (int, optional): Maximum number of results to return. Default is None (no limit).
+   # - start_date (str, optional): Start date for filtering CVEs based on publication date. Default is None.
+   # - end_date (str, optional): End date for filtering CVEs based on publication date. Default is None.
