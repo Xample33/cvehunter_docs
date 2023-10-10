@@ -22,3 +22,4 @@ Contents
 .. toctree::
 
    usage
+   examples
