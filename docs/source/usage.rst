@@ -54,7 +54,17 @@ You can use the `check_connection` method to verify if the `CveHunter` can conne
 Searching by CVE ID
 -------------------
 
-You can use the `search_by_cve` method to retrieve information about a specific CVE by its CVE ID.
+You can use the `search_by_cve` method to retrieve information about a specific CVE by its CVE ID. This method returns a `Cve` object containing the following variables:
+
+- `cve_id` (str): The CVE ID.
+- `description` (str): A description of the CVE.
+- `source` (str): The source identifier.
+- `cwe_id` (str or None): The CWE ID (Common Weakness Enumeration) associated with the CVE, or `None` if not available.
+- `references` (list of str): A list of URLs referencing the CVE.
+- `cvss_v2` (Cvss or None): An optional `Cvss` object representing CVSS version 2 details, or `None` if not available.
+- `cvss_v3` (Cvss or None): An optional `Cvss` object representing CVSS version 3 details, or `None` if not available.
+- `published_date` (str): The publication date of the CVE.
+- `updated_date` (str): The last modified date of the CVE.
 
 .. code-block:: python
 
@@ -70,7 +80,14 @@ You can use the `search_by_cve` method to retrieve information about a specific 
    if cve_info:
        print(f"CVE ID: {cve_info.cve_id}")
        print(f"Description: {cve_info.description}")
-       # ... other information
+       print(f"Source: {cve_info.source}")
+       print(f"CWE ID: {cve_info.cwe_id}")
+       print(f"References: {', '.join(cve_info.references)}")
+       print(f"Published Date: {cve_info.published_date}")
+       print(f"Updated Date: {cve_info.updated_date}")
+
+   # Parameters:
+   # - cve_id (str, required): The CVE ID to search for data.
 
 Searching by CPE ID
 -------------------
@@ -93,7 +110,8 @@ You can use the `search_by_cpe` method to search for CVEs based on a CPE (Common
        for cve_id in cve_ids:
            print(cve_id)
 
-   # Optional Parameters:
+   # Parameters:
+   # - cpe_id (str, required): The CPE ID to search for CVEs.
    # - limit (int, optional): Maximum number of results to return. Default is None (no limit).
    # - only_vulnerable (bool, optional): Limit results to only include the vulnerable ones. Default is None.
    # - start_date (str, optional): Start date for filtering CVEs based on publication date. Default is None.
@@ -122,8 +140,8 @@ You can use the `search_by_vector` method to search for CVEs based on a CVSS (Co
            print(cve_id)
 
    # Parameters:
-   # - cvss_version (int): The CVSS version (2 or 3) to use for the search.
-   # - vector (str): The CVSS vector representing the vulnerabilities.
+   # - cvss_version (int, required): The CVSS version (2 or 3) to use for the search.
+   # - vector (str, required): The CVSS vector representing the vulnerabilities.
    # - limit (int, optional): Maximum number of results to return. Default is None (no limit).
    # - start_date (str, optional): Start date for filtering CVEs based on publication date. Default is None.
    # - end_date (str, optional): End date for filtering CVEs based on publication date. Default is None.
@@ -150,7 +168,7 @@ You can use the `search_by_cwe` method to search for CVEs based on a CWE (Common
            print(cve_id)
 
    # Parameters:
-   # - cwe_id (str): The CWE ID to search for CVEs.
+   # - cwe_id (str, required): The CWE ID to search for CVEs.
    # - limit (int, optional): Maximum number of results to return. Default is None (no limit).
    # - start_date (str, optional): Start date for filtering CVEs based on publication date. Default is None.
    # - end_date (str, optional): End date for filtering CVEs based on publication date. Default is None.
