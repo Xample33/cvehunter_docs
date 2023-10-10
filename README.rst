@@ -1,6 +1,8 @@
-Repository for cvehunter documentation
+cvehunter documentation
 =======================================
 
-Read the documentation here:
+This is the repository for the cvehunter documentation.
 
-https://cvehunter-docs.readthedocs.io/en/latest/
+About cvehunter `here <https://github.com/Xample33/cvehunter/>`_
+
+Documentation `here <https://cvehunter-Docs.readthedocs.io/>`_
